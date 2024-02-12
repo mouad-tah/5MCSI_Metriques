@@ -30,14 +30,14 @@
 
                 var ctx = document.getElementById('commitChart').getContext('2d');
                 var commitChart = new Chart(ctx, {
-                    type: 'bar', // Type de diagramme modifié en 'bar'
+                    type: 'bar',
                     data: {
                         labels: minutes,
                         datasets: [{
                             label: 'Commits par minute',
                             data: commitsCount,
-                            backgroundColor: 'rgba(255, 99, 132, 0.2)', 
-                            borderColor: 'rgba(255, 99, 132, 1)', 
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
                             borderWidth: 1
                         }]
                     },
@@ -47,9 +47,10 @@
                                 beginAtZero: true
                             }
                         },
-                        legend: {
-                            display: true,
-                            position: 'bottom' 
+                        plugins: {
+                            legend: {
+                                position: 'bottom' // Déplacer la légende en bas
+                            }
                         }
                     }
                 });
